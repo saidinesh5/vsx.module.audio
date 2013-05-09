@@ -65,11 +65,10 @@ if(AUDIO_LIBRARIES)
               input/input_audio_raw.cpp
               input/input_audio_mediaplayer.cpp
               lib/fftreal/fftreal.cpp
-              lib/RtAudio/RtAudio.cpp
-              lib/RtMidi/RtMidi.cpp )
+              lib/RtAudio/RtAudio.cpp)
 
   if(WITH_MIDI)
-    list(APPEND SOURCES input/input_audio_midi.cpp)
+    list(APPEND SOURCES input/input_audio_midi.cpp lib/RtMidi/RtMidi.cpp)
   endif(WITH_MIDI)
 
   add_library(${module_id} MODULE ${SOURCES})
